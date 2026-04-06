@@ -264,16 +264,19 @@
       box-shadow: 0 12px 40px rgba(0,0,0,0.1);
     }
 
-    .tour-img {
+    img.tour-img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
-      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 48px;
+      display: block;
+      transition: transform 0.4s ease;
     }
+
+    .tour-card:hover img.tour-img {
+      transform: scale(1.04);
+    }
+
+    .tour-card { overflow: hidden; }
 
     .tour-badge {
       display: inline-block;
@@ -575,7 +578,7 @@
     <div class="tours-grid">
 
       <div class="tour-card">
-        <div class="tour-img">🐠</div>
+        <img class="tour-img" src="https://images.unsplash.com/photo-1520454974749-a955d8eb0e77?w=600&q=80" alt="Bora Bora VIP - Beach Club Islas del Rosario" loading="lazy">
         <div class="tour-body">
           <span class="tour-badge">⭐ Más vendido</span>
           <h3>Bora Bora VIP</h3>
@@ -590,7 +593,7 @@
       </div>
 
       <div class="tour-card">
-        <div class="tour-img">🌊</div>
+        <img class="tour-img" src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=600&q=80" alt="Isla del Sol - Islas del Rosario Cartagena" loading="lazy">
         <div class="tour-body">
           <span class="tour-badge">Familiar</span>
           <h3>Isla del Sol</h3>
@@ -605,7 +608,7 @@
       </div>
 
       <div class="tour-card">
-        <div class="tour-img">🎶</div>
+        <img class="tour-img" src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Ibbiza Island Beach Club - DJ y piscina" loading="lazy">
         <div class="tour-body">
           <span class="tour-badge">Fiesta</span>
           <h3>Ibbiza Island Beach Club</h3>
@@ -620,7 +623,7 @@
       </div>
 
       <div class="tour-card">
-        <div class="tour-img">🐚</div>
+        <img class="tour-img" src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600&q=80" alt="Mangata Beach Club - Snorkel y kayak" loading="lazy">
         <div class="tour-body">
           <span class="tour-badge">Premium</span>
           <h3>Mangata Beach Club</h3>
@@ -635,7 +638,7 @@
       </div>
 
       <div class="tour-card">
-        <div class="tour-img">🏖</div>
+        <img class="tour-img" src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=600&q=80" alt="Isla Mulata - Playa exclusiva Cartagena" loading="lazy">
         <div class="tour-body">
           <span class="tour-badge">Romance</span>
           <h3>Isla Múlata</h3>
@@ -650,7 +653,7 @@
       </div>
 
       <div class="tour-card">
-        <div class="tour-img">🚤</div>
+        <img class="tour-img" src="https://images.unsplash.com/photo-1501436513145-30f24e19fcc8?w=600&q=80" alt="Tour 5 Islas VIP - Lancha rápida Cartagena" loading="lazy">
         <div class="tour-body">
           <span class="tour-badge">Aventura</span>
           <h3>Tour 5 Islas VIP</h3>
@@ -680,7 +683,7 @@
       <div class="tours-grid">
 
         <div class="tour-card">
-          <div class="tour-img">🌴</div>
+          <img class="tour-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Fénix Beach - Gastronomía frente al mar Tierra Bomba" loading="lazy">
           <div class="tour-body">
             <span class="tour-badge">⭐ Trending</span>
             <h3>Fénix Beach</h3>
@@ -695,7 +698,7 @@
         </div>
 
         <div class="tour-card">
-          <div class="tour-img">🎉</div>
+          <img class="tour-img" src="https://images.unsplash.com/photo-1533760881669-80db4d7b341c?w=600&q=80" alt="Club Kabanna - Beach club adultos Tierra Bomba" loading="lazy">
           <div class="tour-body">
             <span class="tour-badge">Solo adultos</span>
             <h3>Club Kabanna</h3>
@@ -710,7 +713,7 @@
         </div>
 
         <div class="tour-card">
-          <div class="tour-img">🌿</div>
+          <img class="tour-img" src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=600&q=80" alt="Palmarito - Playa familiar tranquila Cartagena" loading="lazy">
           <div class="tour-body">
             <span class="tour-badge">Tranquilo</span>
             <h3>Palmarito</h3>
@@ -740,7 +743,7 @@
     <div class="tours-grid">
 
       <div class="tour-card">
-        <div class="tour-img">🏰</div>
+        <img class="tour-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="City Tour Privado - Centro histórico Cartagena" loading="lazy">
         <div class="tour-body">
           <span class="tour-badge">Romántico</span>
           <h3>City Tour Privado</h3>
@@ -755,7 +758,7 @@
       </div>
 
       <div class="tour-card">
-        <div class="tour-img">🚲</div>
+        <img class="tour-img" src="https://images.unsplash.com/photo-1596009655568-7c7b2fd0c1f4?w=600&q=80" alt="Bike Tour - Calles coloridas Cartagena" loading="lazy">
         <div class="tour-body">
           <span class="tour-badge">Especial</span>
           <h3>Bike Tour Privado</h3>
@@ -770,7 +773,7 @@
       </div>
 
       <div class="tour-card">
-        <div class="tour-img">🌋</div>
+        <img class="tour-img" src="https://images.unsplash.com/photo-1619546952812-520e98064a52?w=600&q=80" alt="Volcán del Totumo - Baño de lodo Colombia" loading="lazy">
         <div class="tour-body">
           <span class="tour-badge">Imperdible</span>
           <h3>Volcán del Totumo</h3>
@@ -785,7 +788,7 @@
       </div>
 
       <div class="tour-card">
-        <div class="tour-img">🥁</div>
+        <img class="tour-img" src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=600&q=80" alt="Tour Palenque - Primer pueblo libre de América" loading="lazy">
         <div class="tour-body">
           <span class="tour-badge">Cultural</span>
           <h3>Tour Palenque</h3>
@@ -815,7 +818,7 @@
       <div class="tours-grid">
 
         <div class="tour-card">
-          <div class="tour-img">🌅</div>
+          <img class="tour-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Sunset Golden Hours - Atardecer bahía Cartagena" loading="lazy">
           <div class="tour-body">
             <span class="tour-badge">⭐ El más romántico</span>
             <h3>Sunset Golden Hours</h3>
@@ -830,7 +833,7 @@
         </div>
 
         <div class="tour-card">
-          <div class="tour-img">🍷</div>
+          <img class="tour-img" src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=600&q=80" alt="Cena por la Bahía - Experiencia gourmet Cartagena" loading="lazy">
           <div class="tour-body">
             <span class="tour-badge">Cena</span>
             <h3>Cena por la Bahía Sibarita</h3>
@@ -845,7 +848,7 @@
         </div>
 
         <div class="tour-card">
-          <div class="tour-img">🌙</div>
+          <img class="tour-img" src="https://images.unsplash.com/photo-1580289660303-b13e2aca35c1?w=600&q=80" alt="5 Islas + Plancton - Bioluminiscencia Cartagena" loading="lazy">
           <div class="tour-body">
             <span class="tour-badge">Especial</span>
             <h3>5 Islas + Plancton</h3>
@@ -921,7 +924,7 @@
     <p style="font-size: 14px; color: var(--gray);">
       ¿Prefieres escribirnos directo?
       <!-- 🔧 REEMPLAZA CON TU NÚMERO DE WHATSAPP -->
-      <a href="https://wa.me/+57XXXXXXXXX?text=Hola!%20Quiero%20información%20sobre%20tours%20en%20Cartagena%20🌴" style="color:var(--teal); font-weight:600;">WhatsApp →</a>
+      <a href="https://wa.me/+56998435497?text=Hola!%20Quiero%20información%20sobre%20tours%20en%20Cartagena%20🌴" style="color:var(--teal); font-weight:600;">WhatsApp →</a>
     </p>
   </div>
 
@@ -940,7 +943,7 @@
        WHATSAPP FLOTANTE
   ═══════════════════════════════════════ -->
   <!-- 🔧 REEMPLAZA CON TU NÚMERO DE WHATSAPP -->
-  <a href="https://wa.me/+57XXXXXXXXX?text=Hola!%20Quiero%20información%20sobre%20tours%20en%20Cartagena%20🌴"
+  <a href="https://wa.me/+56998435497?text=Hola!%20Quiero%20información%20sobre%20tours%20en%20Cartagena%20🌴"
      class="whatsapp-float"
      target="_blank"
      aria-label="Escríbenos por WhatsApp">
