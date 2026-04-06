@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CEL — Cartagena Experience Lab | Tours para Chilenos</title>
+  <meta name="description" content="Vivimos en Cartagena. Diseñamos tu experiencia perfecta. Tours, islas y experiencias únicas para viajeros chilenos." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ═══════════════════════════════════════
+       VARIABLES — Brand CEL
+    ═══════════════════════════════════════ */
+    :root {
+      --teal:   #3DBDB8;
+      --teal-dark: #2a9a96;
+      --black:  #0D0D0D;
+      --cream:  #F0EDE8;
+      --white:  #FFFFFF;
+      --gray:   #6B7280;
+      --light:  #F9F8F6;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--black);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ═══════════════════════════════════════
+       NAVBAR
+    ═══════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 40px;
+      background: rgba(240,237,232,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(61,189,184,0.15);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: 1px;
+    }
+
+    .nav-logo span { color: var(--teal); }
+
+    .nav-cta {
+      background: var(--teal);
+      color: var(--white);
+      padding: 10px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--teal-dark); }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(to bottom, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.3) 60%, rgba(13,13,13,0.7) 100%),
+        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+    }
+
+    .hero-tag {
+      background: rgba(61,189,184,0.2);
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 6vw, 72px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      max-width: 820px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--teal);
+    }
+
+    .hero p {
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,0.85);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ═══════════════════════════════════════
+       PROPUESTA DE VALOR
+    ═══════════════════════════════════════ */
+    .propuesta {
+      background: var(--cream);
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .propuesta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      max-width: 1000px;
+      margin: 48px auto 0;
+    }
+
+    .prop-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .prop-icon {
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .prop-item h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .prop-item p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════
+       SECCIÓN TOURS — ISLAS DEL ROSARIO
+    ═══════════════════════════════════════ */
+    section {
+      padding: 80px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--gray);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+
+    .tours-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .tour-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .tour-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+
+    .tour-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+
+    .tour-badge {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 10px;
+    }
+
+    .tour-body {
+      padding: 20px;
+    }
+
+    .tour-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--black);
+    }
+
+    .tour-body p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .tour-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      background: var(--cream);
+      color: var(--black);
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    .tour-cta {
+      width: 100%;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+    }
+
+    .tour-cta:hover { background: var(--teal); }
+
+    /* ═══════════════════════════════════════
+       SEPARADOR CON FONDO
+    ═══════════════════════════════════════ */
+    .bg-cream { background: var(--cream); }
+    .full-width { max-width: 100%; padding: 80px 40px; }
+
+    /* ═══════════════════════════════════════
+       CÓMO FUNCIONA
+    ═══════════════════════════════════════ */
+    .como-funciona {
+      background: var(--black);
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .como-funciona .section-label { color: var(--teal); }
+    .como-funciona .section-title { color: var(--white); margin-bottom: 48px; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 52px;
+      height: 52px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin: 0 auto 16px;
+    }
+
+    .step h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════
+       TESTIMONIAL / SOCIAL PROOF
+    ═══════════════════════════════════════ */
+    .social-proof {
+      background: var(--teal);
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .social-proof h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 4vw, 40px);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .social-proof p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 32px;
+    }
+
+    /* ═══════════════════════════════════════
+       FORMULARIO / CTA FINAL
+    ═══════════════════════════════════════ */
+    .cta-final {
+      padding: 100px 40px;
+      text-align: center;
+      background: var(--cream);
+    }
+
+    .cta-final .section-title {
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+
+    .cta-final .section-subtitle {
+      max-width: 500px;
+      margin: 0 auto 40px;
+    }
+
+    /* ═══════════════════════════════════════
+       WHATSAPP FLOTANTE
+    ═══════════════════════════════════════ */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      z-index: 999;
+      transition: transform 0.2s;
+    }
+
+    .whatsapp-float:hover { transform: scale(1.1); }
+
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      background: var(--black);
+      padding: 40px;
+      text-align: center;
+    }
+
+    footer .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    footer .logo span { color: var(--teal); }
+
+    footer p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .hero { padding: 100px 20px 60px; }
+      section { padding: 60px 20px; }
+      .full-width { padding: 60px 20px; }
+      .como-funciona { padding: 60px 20px; }
+      .cta-final { padding: 60px 20px; }
+      .hero-btns { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <nav>
+    <div class="nav-logo">CEL<span>.</span></div>
+    <a href="#cotiza" class="nav-cta">Cotiza tu viaje →</a>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section class="hero" style="max-width:100%; padding-top:120px;">
+    <div class="hero-tag">🇨🇱 Diseñado para viajeros chilenos</div>
+    <h1>Cartagena como<br/><em>nunca la imaginaste</em></h1>
+    <p>Vivimos aquí. Conocemos cada isla, cada rincón, cada experiencia que vale la pena. Tú solo dinos cuándo llegas.</p>
+    <div class="hero-btns">
+      <a href="#cotiza" class="btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.278 7.044L.786 23.214l4.368-1.143C6.923 23.319 9.388 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.394 0-4.636-.72-6.507-1.963l-.466-.277-2.593.679.693-2.527-.303-.492C1.639 15.9 1 14.024 1 12 1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11z"/></svg>
+        Quiero mi itinerario
+      </a>
+      <a href="#tours" class="btn-secondary">Ver experiencias ↓</a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       PROPUESTA DE VALOR
+  ═══════════════════════════════════════ -->
+  <div class="propuesta">
+    <p class="section-label">Por qué CEL</p>
+    <h2 class="section-title" style="font-family:'Playfair Display',serif; font-size:clamp(24px,3vw,36px);">No somos una agencia de viajes.<br/>Somos tu contacto local.</h2>
+    <div class="propuesta-grid">
+      <div class="prop-item">
+        <div class="prop-icon">🏝</div>
+        <h3>Conocemos cada isla</h3>
+        <p>Sabemos qué isla va con tu perfil. No te mandamos donde va todo el mundo.</p>
+      </div>
+      <div class="prop-item">
+        <div class="prop-icon">🇨🇱</div>
+        <h3>Hablamos tu idioma</h3>
+        <p>Precios en CLP, atención en chileno, sin sorpresas ni malentendidos.</p>
+      </div>
+      <div class="prop-item">
+        <div class="prop-icon">✨</div>
+        <h3>Todo personalizado</h3>
+        <p>Ningún itinerario es igual. Lo armamos según tus días, tu grupo y lo que quieres vivir.</p>
+      </div>
+      <div class="prop-item">
+        <div class="prop-icon">💬</div>
+        <h3>Apoyo en tiempo real</h3>
+        <p>Estamos disponibles por WhatsApp antes, durante y después de tu viaje.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       TOURS — ISLAS DEL ROSARIO
+  ═══════════════════════════════════════ -->
+  <section id="tours">
+    <p class="section-label">Islas del Rosario</p>
+    <h2 class="section-title">Las islas más increíbles<br/>del Caribe colombiano</h2>
+    <p class="section-subtitle">Agua cristalina, coral vivo y experiencias que van desde la fiesta hasta el silencio total.</p>
+
+    <div class="tours-grid">
+
+      <div class="tour-card">
+        <div class="tour-img">🐠</div>
+        <div class="tour-body">
+          <span class="tour-badge">⭐ Más vendido</span>
+          <h3>Bora Bora VIP</h3>
+          <p>La isla más exclusiva del Rosario. Beach club de lujo, almuerzo a la carta con 12 opciones, cama de playa y acceso completo.</p>
+          <div class="tour-tags">
+            <span class="tag">Solo mayores 18</span>
+            <span class="tag">Beach club</span>
+            <span class="tag">Open bar</span>
+          </div>
+          <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tour-img">🌊</div>
+        <div class="tour-body">
+          <span class="tour-badge">Familiar</span>
+          <h3>Isla del Sol</h3>
+          <p>La más tranquila y familiar del archipiélago. Playa, piscina de agua de mar, almuerzo típico caribeño y ambiente puro.</p>
+          <div class="tour-tags">
+            <span class="tag">Familias</span>
+            <span class="tag">Niños OK</span>
+            <span class="tag">Tranquilo</span>
+          </div>
+          <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tour-img">🎶</div>
+        <div class="tour-body">
+          <span class="tour-badge">Fiesta</span>
+          <h3>Ibbiza Island Beach Club</h3>
+          <p>DJ en vivo, piscina de agua salada, ambiente animado. Para los que quieren Cartagena con energía a full.</p>
+          <div class="tour-tags">
+            <span class="tag">DJ en vivo</span>
+            <span class="tag">Pet friendly</span>
+            <span class="tag">Snorkeling</span>
+          </div>
+          <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tour-img">🐚</div>
+        <div class="tour-body">
+          <span class="tour-badge">Premium</span>
+          <h3>Mangata Beach Club</h3>
+          <p>Tour panorámico + snorkel en la avioneta hundida + 2x1 en cócteles todo el día + almuerzo + kayak y paddleboard.</p>
+          <div class="tour-tags">
+            <span class="tag">Snorkel avioneta</span>
+            <span class="tag">2x1 cócteles</span>
+            <span class="tag">Paddleboard</span>
+          </div>
+          <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tour-img">🏖</div>
+        <div class="tour-body">
+          <span class="tour-badge">Romance</span>
+          <h3>Isla Múlata</h3>
+          <p>La joya escondida. Arena blanca, aguas turquesas, sin multitudes. Perfecta para parejas que buscan tranquilidad absoluta.</p>
+          <div class="tour-tags">
+            <span class="tag">Exclusiva</span>
+            <span class="tag">Parejas</span>
+            <span class="tag">Naturaleza</span>
+          </div>
+          <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tour-img">🚤</div>
+        <div class="tour-body">
+          <span class="tour-badge">Aventura</span>
+          <h3>Tour 5 Islas VIP</h3>
+          <p>El recorrido completo: Fuerte Bocachica + Playa Blanca + Oceanario + isla rumbera Cholón + atardecer opcional.</p>
+          <div class="tour-tags">
+            <span class="tag">Día completo</span>
+            <span class="tag">Guía bilingüe</span>
+            <span class="tag">5 paradas</span>
+          </div>
+          <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       TOURS — TIERRA BOMBA
+  ═══════════════════════════════════════ -->
+  <div class="bg-cream">
+    <section style="padding: 80px 40px; max-width:1200px; margin:0 auto;">
+      <p class="section-label">Tierra Bomba</p>
+      <h2 class="section-title">A 15 minutos de Cartagena.<br/>Otro mundo.</h2>
+      <p class="section-subtitle">La isla más cercana a la ciudad. Beach clubs con onda propia y playas para todos los estilos.</p>
+
+      <div class="tours-grid">
+
+        <div class="tour-card">
+          <div class="tour-img">🌴</div>
+          <div class="tour-body">
+            <span class="tour-badge">⭐ Trending</span>
+            <h3>Fénix Beach</h3>
+            <p>Sushi, poke bowls, pizzas y paella con vista al mar. DJ los fines de semana y clases de champeta. El beach club más moderno.</p>
+            <div class="tour-tags">
+              <span class="tag">Gastronomía</span>
+              <span class="tag">DJ fines de semana</span>
+              <span class="tag">Champeta</span>
+            </div>
+            <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+          </div>
+        </div>
+
+        <div class="tour-card">
+          <div class="tour-img">🎉</div>
+          <div class="tour-body">
+            <span class="tour-badge">Solo adultos</span>
+            <h3>Club Kabanna</h3>
+            <p>El más animado de Tierra Bomba. 25 opciones de menú Nikkei y caribeño, DJ en vivo, camas frente al mar y ambiente festivo.</p>
+            <div class="tour-tags">
+              <span class="tag">+18 únicamente</span>
+              <span class="tag">Nikkei</span>
+              <span class="tag">Fiesta</span>
+            </div>
+            <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+          </div>
+        </div>
+
+        <div class="tour-card">
+          <div class="tour-img">🌿</div>
+          <div class="tour-body">
+            <span class="tour-badge">Tranquilo</span>
+            <h3>Palmarito</h3>
+            <p>El más familiar y relajado. Buffet, piscina de agua dulce, kayak, paddleboard, zumba y zona de hamacas.</p>
+            <div class="tour-tags">
+              <span class="tag">Familiar</span>
+              <span class="tag">Piscina</span>
+              <span class="tag">Zumba</span>
+            </div>
+            <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       TOURS — CIUDAD Y CULTURA
+  ═══════════════════════════════════════ -->
+  <section>
+    <p class="section-label">Ciudad y Cultura</p>
+    <h2 class="section-title">Cartagena tiene más<br/>que playa.</h2>
+    <p class="section-subtitle">Su centro histórico es Patrimonio de la Humanidad. Hay que vivirlo, no solo fotografiarlo.</p>
+
+    <div class="tours-grid">
+
+      <div class="tour-card">
+        <div class="tour-img">🏰</div>
+        <div class="tour-body">
+          <span class="tour-badge">Romántico</span>
+          <h3>City Tour Privado</h3>
+          <p>Recorrido en vehículo privado: Convento de la Popa, Castillo San Felipe, centro histórico y Getsemaní. Guía bilingüe.</p>
+          <div class="tour-tags">
+            <span class="tag">Privado</span>
+            <span class="tag">Bilingüe</span>
+            <span class="tag">Parejas</span>
+          </div>
+          <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tour-img">🚲</div>
+        <div class="tour-body">
+          <span class="tour-badge">Especial</span>
+          <h3>Bike Tour Privado</h3>
+          <p>Recorre el Centro Histórico y Getsemaní en bicicleta con guía certificado. Degustación típica incluida.</p>
+          <div class="tour-tags">
+            <span class="tag">Activo</span>
+            <span class="tag">Instagrameable</span>
+            <span class="tag">Degustación</span>
+          </div>
+          <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tour-img">🌋</div>
+        <div class="tour-body">
+          <span class="tour-badge">Imperdible</span>
+          <h3>Volcán del Totumo</h3>
+          <p>Baño de lodo medicinal en el volcán más famoso de Colombia + playa + almuerzo típico cartagenero.</p>
+          <div class="tour-tags">
+            <span class="tag">Único</span>
+            <span class="tag">Medicinal</span>
+            <span class="tag">Almuerzo</span>
+          </div>
+          <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tour-img">🥁</div>
+        <div class="tour-body">
+          <span class="tour-badge">Cultural</span>
+          <h3>Tour Palenque</h3>
+          <p>Visita San Basilio de Palenque, el primer pueblo libre de América. Música, historia, lengua bantú y almuerzo ancestral.</p>
+          <div class="tour-tags">
+            <span class="tag">Patrimonio UNESCO</span>
+            <span class="tag">Privado disponible</span>
+            <span class="tag">5 horas</span>
+          </div>
+          <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       TOURS — ATARDECERES Y BAHÍA
+  ═══════════════════════════════════════ -->
+  <div class="bg-cream">
+    <section style="padding: 80px 40px; max-width:1200px; margin:0 auto;">
+      <p class="section-label">Atardeceres y Bahía</p>
+      <h2 class="section-title">El atardecer de Cartagena<br/>es otro nivel.</h2>
+      <p class="section-subtitle">Los últimos 2 horas del día sobre el mar son la experiencia más memorables de la ciudad.</p>
+
+      <div class="tours-grid">
+
+        <div class="tour-card">
+          <div class="tour-img">🌅</div>
+          <div class="tour-body">
+            <span class="tour-badge">⭐ El más romántico</span>
+            <h3>Sunset Golden Hours</h3>
+            <p>Bote deportivo por la bahía + barra libre a bordo + entrada a Anaho Beach Club con DJ y piscina. Dress code: blanco playero.</p>
+            <div class="tour-tags">
+              <span class="tag">Barra libre</span>
+              <span class="tag">Beach club</span>
+              <span class="tag">+15 años</span>
+            </div>
+            <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+          </div>
+        </div>
+
+        <div class="tour-card">
+          <div class="tour-img">🍷</div>
+          <div class="tour-body">
+            <span class="tour-badge">Cena</span>
+            <h3>Cena por la Bahía Sibarita</h3>
+            <p>2 horas navegando la bahía con cena de 4 tiempos y media botella de vino por persona. La experiencia más elegante de Cartagena.</p>
+            <div class="tour-tags">
+              <span class="tag">Cena gourmet</span>
+              <span class="tag">Vino incluido</span>
+              <span class="tag">2 horas</span>
+            </div>
+            <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+          </div>
+        </div>
+
+        <div class="tour-card">
+          <div class="tour-img">🌙</div>
+          <div class="tour-body">
+            <span class="tour-badge">Especial</span>
+            <h3>5 Islas + Plancton</h3>
+            <p>Tour de islas de día + atardecer en Isla Barú + experiencia de plancton bioluminiscente en la noche. El combo perfecto.</p>
+            <div class="tour-tags">
+              <span class="tag">Día completo</span>
+              <span class="tag">Plancton</span>
+              <span class="tag">Único</span>
+            </div>
+            <a href="#cotiza" class="tour-cta">Consultar disponibilidad</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       CÓMO FUNCIONA
+  ═══════════════════════════════════════ -->
+  <div class="como-funciona">
+    <p class="section-label">El proceso</p>
+    <h2 class="section-title" style="font-family:'Playfair Display',serif; font-size:clamp(26px,4vw,42px); color:#fff; margin-bottom:48px;">Así de simple funciona CEL</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Completas el formulario</h3>
+        <p>Nos cuentas tus fechas, quiénes viajan y qué quieren vivir. 3 minutos.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Armamos tu propuesta</h3>
+        <p>En menos de 24 horas te enviamos un itinerario personalizado con opciones y precios en CLP.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Confirmas por WhatsApp</h3>
+        <p>Ajustamos lo que necesites y confirmamos todo con el menor estrés posible.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Tú solo disfrutas</h3>
+        <p>Llegás a Cartagena y nosotros nos encargamos de que todo fluya perfecto.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       SOCIAL PROOF
+  ═══════════════════════════════════════ -->
+  <div class="social-proof">
+    <h2>"Cartagena para chilenos,<br/>diseñada por alguien que vive ahí."</h2>
+    <p>Seguinos en TikTok e Instagram para ver las experiencias en tiempo real.</p>
+    <a href="#cotiza" class="btn-primary" style="display:inline-flex; margin: 0 auto;">Cotizar mi viaje ahora →</a>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       CTA FINAL — FORMULARIO
+  ═══════════════════════════════════════ -->
+  <div class="cta-final" id="cotiza">
+    <p class="section-label" style="text-align:center;">Cupo limitado por temporada</p>
+    <h2 class="section-title">¿Cuándo vienes<br/>a Cartagena?</h2>
+    <p class="section-subtitle">Completa el formulario y te armamos la experiencia perfecta para tu grupo. Sin costo. Sin compromiso.</p>
+
+    <!-- 🔧 REEMPLAZA ESTE LINK CON TU GOOGLE FORM -->
+    <a href="AQUI_VA_EL_LINK_DEL_GOOGLE_FORM" target="_blank" class="btn-primary" style="display:inline-flex; margin:0 auto 24px;">
+      Completar formulario de viaje →
+    </a>
+
+    <p style="font-size: 14px; color: var(--gray);">
+      ¿Prefieres escribirnos directo?
+      <!-- 🔧 REEMPLAZA CON TU NÚMERO DE WHATSAPP -->
+      <a href="https://wa.me/+57XXXXXXXXX?text=Hola!%20Quiero%20información%20sobre%20tours%20en%20Cartagena%20🌴" style="color:var(--teal); font-weight:600;">WhatsApp →</a>
+    </p>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer>
+    <div class="logo">CEL<span>.</span></div>
+    <p>Cartagena Experience Lab — Taylor Capital Partners S.A.S.</p>
+    <p style="margin-top:8px;">Cartagena de Indias, Colombia 🇨🇴</p>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════
+       WHATSAPP FLOTANTE
+  ═══════════════════════════════════════ -->
+  <!-- 🔧 REEMPLAZA CON TU NÚMERO DE WHATSAPP -->
+  <a href="https://wa.me/+57XXXXXXXXX?text=Hola!%20Quiero%20información%20sobre%20tours%20en%20Cartagena%20🌴"
+     class="whatsapp-float"
+     target="_blank"
+     aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+</body>
+</html>
