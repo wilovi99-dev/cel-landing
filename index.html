@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CEL — Cartagena Experience Lab | Tours para Chilenos</title>
-  <meta name="description" content="Vivimos en Cartagena. Diseñamos tu experiencia perfecta. Tours, islas y experiencias únicas para viajeros chilenos."/>
+  <title>Tours en Cartagena para Chilenos | CEL — Cartagena Experience Lab</title>
+  <meta name="description" content="La única agencia especializada en viajeros chilenos. Tours en las Islas del Rosario, atardeceres y city tours. Precios en CLP, respuesta en 24h."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -57,7 +57,7 @@
       min-height:100vh;
       background:
         linear-gradient(to bottom, rgba(13,13,13,0.6) 0%, rgba(13,13,13,0.35) 50%, rgba(13,13,13,0.75) 100%),
-        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=85') center/cover no-repeat;
+        url('imagenes/portada.jpg') center/cover no-repeat;
       display:flex;flex-direction:column;justify-content:center;align-items:center;
       text-align:center;padding:140px 24px 100px;
     }
@@ -283,13 +283,118 @@
       .hero-btns{flex-direction:column;align-items:stretch;}
       .btn-primary,.btn-outline{text-align:center;justify-content:center;}
     }
+
+    /* ══ LOGO IMG ══ */
+    .logo-img{height:38px;width:auto;display:block;}
+    .logo-img-footer{height:44px;width:auto;display:block;margin-bottom:10px;}
+
+    /* ══ PRECIO EN CARD ══ */
+    .card-price{font-size:15px;font-weight:700;color:var(--teal);margin-bottom:10px;}
+    .card-price small{font-size:11px;font-weight:400;color:var(--gray);margin-left:3px;}
+
+    /* ══ SECCIÓN EL PROBLEMA ══ */
+    .problema-section{background:var(--black);padding:72px 40px;}
+    .problema-inner{max-width:940px;margin:0 auto;text-align:center;}
+    .problema-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin:36px 0;}
+    .problema-item{background:rgba(255,255,255,0.06);border-radius:14px;padding:26px 20px;text-align:center;transition:background .25s;}
+    .problema-item:hover{background:rgba(61,189,184,0.12);}
+    .problema-icon{font-size:32px;display:block;margin-bottom:12px;}
+    .problema-item p{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.65;}
+    .problema-cta{background:var(--teal);border-radius:12px;padding:18px 36px;display:inline-block;margin-top:8px;}
+    .problema-cta p{color:var(--white);font-size:17px;font-weight:700;margin:0;}
+
+    /* ══ TESTIMONIOS ══ */
+    .testimonios-section{background:var(--cream);padding:72px 40px;}
+    .testimonios-inner{max-width:1100px;margin:0 auto;text-align:center;}
+    .t-counter{display:inline-block;background:var(--teal);color:var(--white);
+      border-radius:50px;padding:7px 22px;font-size:13px;font-weight:700;margin-bottom:36px;}
+    .testimonios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;text-align:left;}
+    .testimonio-card{background:var(--white);border-radius:16px;padding:28px;
+      box-shadow:0 2px 16px rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.04);}
+    .t-stars{font-size:15px;margin-bottom:14px;}
+    .t-texto{font-size:14px;color:#333;line-height:1.75;font-style:italic;margin-bottom:18px;}
+    .t-autor{display:flex;flex-direction:column;gap:3px;}
+    .t-autor strong{font-size:14px;font-weight:700;color:var(--black);}
+    .t-autor span{font-size:12px;color:var(--gray);}
+
+    /* ══ CÓMO FUNCIONA — REDISEÑO DINÁMICO ══ */
+    .como-v2{background:var(--black);padding:88px 40px;}
+    .como-v2-inner{max-width:1060px;margin:0 auto;text-align:center;}
+    .como-v2-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+    .como-v2-title{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,42px);
+      font-weight:700;color:var(--white);margin-bottom:12px;}
+    .como-v2-sub{font-size:14px;color:rgba(255,255,255,0.45);margin-bottom:56px;}
+    .como-v2-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+    .como-v2-steps::before{
+      content:'';position:absolute;top:44px;left:12.5%;right:12.5%;
+      height:2px;background:linear-gradient(90deg,var(--teal),rgba(61,189,184,0.2));
+      z-index:0;
+    }
+    .como-v2-step{
+      position:relative;z-index:1;
+      display:flex;flex-direction:column;align-items:center;
+      padding:0 16px;cursor:default;
+      transition:transform .25s;
+    }
+    .como-v2-step:hover{transform:translateY(-6px);}
+    .step-icon{
+      width:88px;height:88px;border-radius:50%;
+      background:rgba(61,189,184,0.1);border:2px solid rgba(61,189,184,0.3);
+      display:flex;align-items:center;justify-content:center;
+      margin-bottom:20px;position:relative;
+      transition:background .25s,border-color .25s,box-shadow .25s;
+    }
+    .como-v2-step:hover .step-icon{
+      background:rgba(61,189,184,0.2);border-color:var(--teal);
+      box-shadow:0 0 28px rgba(61,189,184,0.25);
+    }
+    .step-icon svg{width:36px;height:36px;stroke:var(--teal);fill:none;stroke-width:1.8;transition:stroke .25s;}
+    .step-num-badge{
+      position:absolute;top:-6px;right:-6px;
+      width:24px;height:24px;border-radius:50%;
+      background:var(--teal);color:var(--white);
+      font-size:11px;font-weight:800;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .como-v2-step h3{font-size:15px;font-weight:700;color:var(--white);margin-bottom:8px;}
+    .como-v2-step p{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.65;max-width:180px;}
+
+    /* Animación fade-in al entrar al viewport */
+    .fade-in-step{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s;}
+    .fade-in-step.visible{opacity:1;transform:translateY(0);}
+
+    /* ══ FAQ ══ */
+    .faq-section{background:var(--white);padding:72px 40px;}
+    .faq-inner{max-width:780px;margin:0 auto;}
+    .faq-list{margin-top:36px;display:flex;flex-direction:column;gap:12px;}
+    .faq-item{background:var(--cream);border-radius:12px;
+      padding:22px 26px;border:1px solid rgba(0,0,0,0.04);
+      cursor:pointer;transition:box-shadow .2s;}
+    .faq-item:hover{box-shadow:0 4px 16px rgba(0,0,0,0.07);}
+    .faq-item h3{font-size:15px;font-weight:700;color:var(--black);margin-bottom:10px;}
+    .faq-item p{font-size:14px;color:var(--gray);line-height:1.7;}
+
+    @media(max-width:900px){
+      .como-v2-steps{grid-template-columns:repeat(2,1fr);gap:32px;}
+      .como-v2-steps::before{display:none;}
+    }
+    @media(max-width:768px){
+      .problema-section,.testimonios-section,.faq-section,.como-v2{padding:52px 20px;}
+      .como-v2-steps{grid-template-columns:1fr 1fr;}
+      .testimonios-grid{grid-template-columns:1fr;}
+      .problema-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:480px){
+      .como-v2-steps{grid-template-columns:1fr;}
+    }
+
   </style>
 </head>
 <body>
 
 <!-- ═══ NAVBAR ═══ -->
 <nav>
-  <a href="#" class="nav-logo">CEL<span>.</span></a>
+  <a href="#" class="nav-logo"><img src="logo/logo-cel.png" alt="CEL — Cartagena Experience Lab" class="logo-img"></a>
   <div class="nav-center">
     <a href="#islas" class="nav-link">Islas</a>
     <a href="#tierrabomba" class="nav-link">Tierra Bomba</a>
@@ -305,7 +410,7 @@
     <a href="https://www.tiktok.com/@cartagena.experie" target="_blank" class="nav-social" aria-label="TikTok">
       <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
     </a>
-    <a href="#cotiza" class="nav-cta">Cotiza tu viaje →</a>
+    <a href="#cotiza" class="nav-cta">Armar mi itinerario →</a>
   </div>
 </nav>
 
@@ -313,8 +418,8 @@
 <!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero-tag">🇨🇱 Especialistas en viajeros chilenos</div>
-  <h1>Cartagena como<br/><em>nunca la imaginaste</em></h1>
-  <p class="hero-sub">Vivimos aquí. Conocemos cada isla, cada beach club, cada atardecer. Tú solo dinos cuándo llegas y nosotros hacemos el resto.</p>
+  <h1>Tu viaje a Cartagena<br/><em>sin improvisar.</em></h1>
+  <p class="hero-sub">La única agencia especializada en viajeros chilenos. Precios en CLP, itinerario a tu medida y nosotros resolvemos todo — tú solo disfrutas.</p>
   <div class="hero-btns">
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1Aj3eDeKkUrJRQvnBF7oYNsBfOj_fAtesArcWhcIye4L00A/viewform" target="_blank" class="btn-primary">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.278 7.044L.786 23.214l4.368-1.143C6.923 23.319 9.388 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.394 0-4.636-.72-6.507-1.963l-.466-.277-2.593.679.693-2.527-.303-.492C1.639 15.9 1 14.024 1 12 1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11z"/></svg>
@@ -352,16 +457,87 @@
 
 <!-- ═══ BANNER DESCUENTO ═══ -->
 <div class="discount-banner">
-  <div class="discount-tag">🎁 Oferta exclusiva para chilenos</div>
-  <h2>Déjanos tus datos y recibe<br/>tu propuesta con descuento especial</h2>
-  <p>Cuéntanos tu viaje y te enviamos un itinerario personalizado con precio preferencial por WhatsApp en menos de 24 horas.</p>
+  <div class="discount-tag">🎁 Exclusivo para clientes CEL</div>
+  <h2>Reserva con CEL y accede a<br/>beneficios en comercios aliados</h2>
+  <p>Restaurantes, tiendas y experiencias exclusivas de Cartagena te dan beneficios especiales por ser cliente CEL. Déjanos tus datos y te contamos todos los beneficios de la red.</p>
   <div class="discount-form">
     <input class="discount-input" type="text" placeholder="Tu nombre" id="d-nombre"/>
     <input class="discount-input" type="tel" placeholder="WhatsApp (+56 9...)" id="d-wa"/>
-    <button class="discount-btn" onclick="abrirFormDescuento()">Quiero mi descuento →</button>
+    <button class="discount-btn" onclick="abrirFormDescuento()">Quiero conocer mis beneficios →</button>
   </div>
 </div>
 
+
+
+<!-- ═══ POR QUÉ CEL EXISTE ═══ -->
+<div class="problema-section">
+  <div class="problema-inner">
+    <p class="section-label" style="color:var(--teal)">Por qué CEL existe</p>
+    <h2 class="section-title" style="color:var(--white);max-width:740px;margin:0 auto 10px;">¿Qué pasa cuando llegas a Cartagena<br/>sin planificación?</h2>
+    <p style="color:rgba(255,255,255,0.4);font-size:14px;margin-bottom:0;">El turista que improvisa pierde días. El que viene con CEL, disfruta desde el minuto uno.</p>
+    <div class="problema-grid">
+      <div class="problema-item">
+        <span class="problema-icon">😩</span>
+        <p>Tours masivos con 80 desconocidos — pierdes la mitad del día esperando en un muelle</p>
+      </div>
+      <div class="problema-item">
+        <span class="problema-icon">💸</span>
+        <p>Precios en dólares que cambian el día del pago — sin saber cuánto gastas en CLP</p>
+      </div>
+      <div class="problema-item">
+        <span class="problema-icon">🗺️</span>
+        <p>Sin saber qué beach club vale la pena y cuáles son trampa para turistas</p>
+      </div>
+      <div class="problema-item">
+        <span class="problema-icon">📵</span>
+        <p>Agencias que responden días después — cuando ya perdiste la disponibilidad</p>
+      </div>
+    </div>
+    <div class="problema-cta">
+      <p>CEL existe para que nada de eso te pase. Vivimos aquí.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PRUEBA SOCIAL — TESTIMONIOS ═══ -->
+<div class="testimonios-section">
+  <div class="testimonios-inner">
+    <p class="section-label">Lo que dicen nuestros viajeros</p>
+    <h2 class="section-title">Chilenos que ya vivieron<br/>Cartagena con CEL</h2>
+    <!-- ACTUALIZAR: reemplazar número con cantidad real de clientes atendidos -->
+    <div class="t-counter">+[NÚMERO] viajeros chilenos ya confiaron en CEL</div>
+    <div class="testimonios-grid">
+
+      <div class="testimonio-card">
+        <div class="t-stars">⭐⭐⭐⭐⭐</div>
+        <p class="t-texto">"Llegué con algo de incertidumbre porque en viajes anteriores todo había sido un caos: aeropuerto, hotel, improvisar sobre la marcha. Esta vez mi novio contrató CEL y fue diferente desde el primer momento. Nos enviaron el itinerario completo antes de salir, todo organizado, con notas de qué llevar a cada lugar. Llegamos a Cartagena y alguien nos estaba esperando. El día de playa en las islas lo reservaron en un velero privado — no la embarcación llena de turistas — y cuando llegamos había frutas y música. Se notaba que les habían contado que era nuestro aniversario. Volví a Santiago sintiéndome la persona más especial del mundo. Lo recomiendo con los ojos cerrados."</p>
+        <div class="t-autor">
+          <strong>Valentina Herrera</strong>
+          <span>Santiago · Viaje en pareja · Aniversario</span>
+        </div>
+      </div>
+
+      <div class="testimonio-card">
+        <div class="t-stars">⭐⭐⭐⭐⭐</div>
+        <p class="t-texto">"Éramos cuatro amigos que queríamos conocer Cartagena en serio, no el típico viaje de agencia con bus y guía con micrófono. Le escribimos a CEL por Instagram y de inmediato nos respondieron, nos preguntaron todo: qué queríamos hacer, cuánto queríamos gastar, si nos gustaba la playa de día y salir de noche. Armaron algo que calzó perfecto. Fuimos a los mejores lugares, nos recomendaron dónde comer — nada de restaurantes turísticos sin personalidad — y la noche que salimos nos dijeron exactamente adónde ir y a qué hora. Nadie terminó en un lugar vacío ni gastó de más. El viaje fue excelente y los cuatro ya estamos planeando volver el próximo año. Increíble la ciudad."</p>
+        <div class="t-autor">
+          <strong>Sebastián Mora</strong>
+          <span>Chile · Grupo de amigos</span>
+        </div>
+      </div>
+
+      <div class="testimonio-card">
+        <div class="t-stars">⭐⭐⭐⭐⭐</div>
+        <p class="t-texto">"Viajar con tres niños pequeños es complicado y yo necesitaba que alguien me dijera 'tranquila, esto está resuelto'. Encontré CEL buscando en TikTok y lo primero que me llamó la atención fue que eran chilenos — me entendieron de inmediato lo que necesitaba. Me preguntaron las edades de los niños, si alguno tenía miedo al agua, si teníamos bebé. El itinerario que armaron tenía actividades para los niños y también momentos para que nosotros como pareja pudiéramos descansar un poco. Los paseos eran bien pensados, sin apuro, con pausas. Mi esposo era escéptico de pagar por una agencia, pero al final me dijo que había valido cada peso. Volvimos todos felices y sin el estrés típico de organizar todo solos."</p>
+        <div class="t-autor">
+          <strong>Claudia Fuentes</strong>
+          <span>Chile · Familia con niños</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- ═══ ISLAS DEL ROSARIO ═══ -->
 <div id="islas">
@@ -378,7 +554,7 @@
         <div class="carousel-track" id="c1-track">
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1520454974749-a955d8eb0e77?w=600&q=80" alt="Bora Bora VIP Beach Club" loading="lazy">
+            <img src="imagenes/bora-bora.jpg" alt="Bora Bora VIP Beach Club" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-hot">⭐ Más vendido</span>
               <h3>Bora Bora VIP</h3>
@@ -389,7 +565,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Mantas Beach Club Islas del Rosario" loading="lazy">
+            <img src="imagenes/manta.jpg" alt="Mantas Beach Club Islas del Rosario" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-party">🍹 2x1 todo el día</span>
               <h3>Mantas Beach Club</h3>
@@ -400,7 +576,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Ibbiza Island Beach Club" loading="lazy">
+            <img src="imagenes/ibizza.jpg" alt="Ibbiza Island Beach Club" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-party">🎶 Fiesta</span>
               <h3>Ibbiza Island</h3>
@@ -411,7 +587,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600&q=80" alt="Mangata Beach Club snorkel avioneta" loading="lazy">
+            <img src="imagenes/mangata.jpg" alt="Mangata Beach Club snorkel avioneta" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-adventure">🤿 Premium</span>
               <h3>Mangata Beach Club</h3>
@@ -422,7 +598,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=600&q=80" alt="Isla Mulata playa virgen exclusiva" loading="lazy">
+            <img src="imagenes/isla-mulata.jpg" alt="Isla Mulata playa virgen exclusiva" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-romantic">💑 Romance</span>
               <h3>Isla Múlata</h3>
@@ -433,7 +609,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=600&q=80" alt="Isla del Sol familiar tranquila" loading="lazy">
+            <img src="imagenes/isla-del-sol.jpg" alt="Isla del Sol familiar tranquila" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-family">👨‍👩‍👧 Familiar</span>
               <h3>Isla del Sol</h3>
@@ -444,7 +620,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1501436513145-30f24e19fcc8?w=600&q=80" alt="Tour 5 Islas VIP lancha rápida" loading="lazy">
+            <img src="imagenes/tour-5-islas.jpg" alt="Tour 5 Islas VIP lancha rápida" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-adventure">🚤 Aventura</span>
               <h3>Tour 5 Islas VIP</h3>
@@ -459,7 +635,19 @@
       <button class="carousel-arrow carousel-next" onclick="moveCarousel('c1',1)">
         <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
-      <div class="carousel-dots" id="c1-dots"></div>
+      <div class="carousel-dots" id="c1-dots">
+    <!-- Banner: más tours disponibles -->
+    <div style="text-align:center;margin-top:32px;">
+      <p style="font-size:13px;color:var(--gray);margin-bottom:10px;">¿No encontraste lo que buscas?</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1Aj3eDeKkUrJRQvnBF7oYNsBfOj_fAtesArcWhcIye4L00A/viewform" target="_blank"
+         style="display:inline-flex;align-items:center;gap:8px;background:var(--cream);color:var(--black);
+                border:1.5px solid rgba(0,0,0,0.1);border-radius:50px;padding:10px 22px;
+                font-size:13px;font-weight:600;text-decoration:none;transition:border-color .2s,box-shadow .2s;"
+         onmouseover="this.style.borderColor='var(--teal)';this.style.boxShadow='0 4px 14px rgba(61,189,184,0.2)'"
+         onmouseout="this.style.borderColor='rgba(0,0,0,0.1)';this.style.boxShadow='none'">
+        🌴 Tenemos más tours y actividades — cuéntanos qué buscas
+      </a>
+    </div>
     </div>
   </div>
 </div>
@@ -480,7 +668,7 @@
         <div class="carousel-track" id="c2-track">
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Fénix Beach gastronomía frente al mar" loading="lazy">
+            <img src="imagenes/fenix.jpg" alt="Fénix Beach gastronomía frente al mar" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-hot">⭐ Trending</span>
               <h3>Fénix Beach</h3>
@@ -491,7 +679,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1533760881669-80db4d7b341c?w=600&q=80" alt="Club Kabanna beach club adultos fiesta" loading="lazy">
+            <img src="imagenes/kabanna.jpg" alt="Club Kabanna beach club adultos fiesta" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-party">🔥 Solo adultos</span>
               <h3>Club Kabanna</h3>
@@ -502,7 +690,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=600&q=80" alt="Palmarito playa familiar tranquila" loading="lazy">
+            <img src="imagenes/palmarito.jpg" alt="Palmarito playa familiar tranquila" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-family">🌿 Familiar</span>
               <h3>Palmarito</h3>
@@ -513,7 +701,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" alt="Eteka VIP beach club Tierra Bomba" loading="lazy">
+            <img src="imagenes/eteka.jpg" alt="Eteka VIP beach club Tierra Bomba" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-premium">💎 VIP</span>
               <h3>Eteka VIP</h3>
@@ -528,7 +716,19 @@
       <button class="carousel-arrow carousel-next" onclick="moveCarousel('c2',1)">
         <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
-      <div class="carousel-dots" id="c2-dots"></div>
+      <div class="carousel-dots" id="c2-dots">
+    <!-- Banner: más tours disponibles -->
+    <div style="text-align:center;margin-top:32px;">
+      <p style="font-size:13px;color:var(--gray);margin-bottom:10px;">¿No encontraste lo que buscas?</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1Aj3eDeKkUrJRQvnBF7oYNsBfOj_fAtesArcWhcIye4L00A/viewform" target="_blank"
+         style="display:inline-flex;align-items:center;gap:8px;background:var(--cream);color:var(--black);
+                border:1.5px solid rgba(0,0,0,0.1);border-radius:50px;padding:10px 22px;
+                font-size:13px;font-weight:600;text-decoration:none;transition:border-color .2s,box-shadow .2s;"
+         onmouseover="this.style.borderColor='var(--teal)';this.style.boxShadow='0 4px 14px rgba(61,189,184,0.2)'"
+         onmouseout="this.style.borderColor='rgba(0,0,0,0.1)';this.style.boxShadow='none'">
+        🌴 Tenemos más tours y actividades — cuéntanos qué buscas
+      </a>
+    </div>
     </div>
   </div>
 </div>
@@ -549,7 +749,7 @@
         <div class="carousel-track" id="c3-track">
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1566126751939-87b24e766af8?w=600&q=80" alt="Chiva Rumbera Cartagena fiesta" loading="lazy">
+            <img src="imagenes/chiva-rumbera.jpg" alt="Chiva Rumbera Cartagena fiesta" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-party">🎉 Imperdible</span>
               <h3>Chiva Rumbera</h3>
@@ -560,7 +760,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="City Tour privado centro histórico Cartagena" loading="lazy">
+            <img src="imagenes/city-tour.jpg" alt="City Tour privado centro histórico Cartagena" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-romantic">💑 Romántico</span>
               <h3>City Tour Privado</h3>
@@ -571,7 +771,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1619546952812-520e98064a52?w=600&q=80" alt="Volcán del Totumo baño de lodo Colombia" loading="lazy">
+            <img src="imagenes/volcan-totumo.jpg" alt="Volcán del Totumo baño de lodo Colombia" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-adventure">🌋 Único</span>
               <h3>Volcán del Totumo</h3>
@@ -582,7 +782,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=600&q=80" alt="Tour Palenque primer pueblo libre América" loading="lazy">
+            <img src="imagenes/palenque.jpg" alt="Tour Palenque primer pueblo libre América" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-culture">🥁 Cultura</span>
               <h3>Tour Palenque</h3>
@@ -593,7 +793,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1596009655568-7c7b2fd0c1f4?w=600&q=80" alt="Bike Tour privado calles coloniales Cartagena" loading="lazy">
+            <img src="imagenes/bike-tour.jpg" alt="Bike Tour privado calles coloniales Cartagena" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-adventure">🚲 Activo</span>
               <h3>Bike Tour Privado</h3>
@@ -608,7 +808,19 @@
       <button class="carousel-arrow carousel-next" onclick="moveCarousel('c3',1)">
         <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
-      <div class="carousel-dots" id="c3-dots"></div>
+      <div class="carousel-dots" id="c3-dots">
+    <!-- Banner: más tours disponibles -->
+    <div style="text-align:center;margin-top:32px;">
+      <p style="font-size:13px;color:var(--gray);margin-bottom:10px;">¿No encontraste lo que buscas?</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1Aj3eDeKkUrJRQvnBF7oYNsBfOj_fAtesArcWhcIye4L00A/viewform" target="_blank"
+         style="display:inline-flex;align-items:center;gap:8px;background:var(--cream);color:var(--black);
+                border:1.5px solid rgba(0,0,0,0.1);border-radius:50px;padding:10px 22px;
+                font-size:13px;font-weight:600;text-decoration:none;transition:border-color .2s,box-shadow .2s;"
+         onmouseover="this.style.borderColor='var(--teal)';this.style.boxShadow='0 4px 14px rgba(61,189,184,0.2)'"
+         onmouseout="this.style.borderColor='rgba(0,0,0,0.1)';this.style.boxShadow='none'">
+        🌴 Tenemos más tours y actividades — cuéntanos qué buscas
+      </a>
+    </div>
     </div>
   </div>
 </div>
@@ -629,7 +841,7 @@
         <div class="carousel-track" id="c4-track">
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=600&q=80" alt="Catamarán Bonavida sunset islas" loading="lazy">
+            <img src="imagenes/catamaran.jpg" alt="Catamarán Bonavida sunset islas" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-romantic">⛵ Especial</span>
               <h3>Sunset en Catamarán</h3>
@@ -640,7 +852,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Sunset Golden Hours bote deportivo bahía" loading="lazy">
+            <img src="imagenes/tour-bahia.jpg" alt="Sunset Golden Hours bote deportivo bahía" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-romantic">⭐ El más romántico</span>
               <h3>Sunset Golden Hours</h3>
@@ -651,7 +863,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=600&q=80" alt="Cena por la bahía Sibarita gourmet" loading="lazy">
+            <img src="imagenes/cena-bahia.jpg" alt="Cena por la bahía Sibarita gourmet" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-premium">🍷 Gourmet</span>
               <h3>Cena por la Bahía</h3>
@@ -662,7 +874,7 @@
           </div>
 
           <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1580289660303-b13e2aca35c1?w=600&q=80" alt="5 Islas más plancton bioluminiscencia" loading="lazy">
+            <img src="imagenes/placton.jpg" alt="5 Islas más plancton bioluminiscencia" loading="lazy">
             <div class="card-body">
               <span class="card-badge badge-adventure">🌙 Único</span>
               <h3>5 Islas + Plancton</h3>
@@ -677,21 +889,132 @@
       <button class="carousel-arrow carousel-next" onclick="moveCarousel('c4',1)">
         <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
-      <div class="carousel-dots" id="c4-dots"></div>
+      <div class="carousel-dots" id="c4-dots">
+    <!-- Banner: más tours disponibles -->
+    <div style="text-align:center;margin-top:32px;">
+      <p style="font-size:13px;color:var(--gray);margin-bottom:10px;">¿No encontraste lo que buscas?</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1Aj3eDeKkUrJRQvnBF7oYNsBfOj_fAtesArcWhcIye4L00A/viewform" target="_blank"
+         style="display:inline-flex;align-items:center;gap:8px;background:var(--cream);color:var(--black);
+                border:1.5px solid rgba(0,0,0,0.1);border-radius:50px;padding:10px 22px;
+                font-size:13px;font-weight:600;text-decoration:none;transition:border-color .2s,box-shadow .2s;"
+         onmouseover="this.style.borderColor='var(--teal)';this.style.boxShadow='0 4px 14px rgba(61,189,184,0.2)'"
+         onmouseout="this.style.borderColor='rgba(0,0,0,0.1)';this.style.boxShadow='none'">
+        🌴 Tenemos más tours y actividades — cuéntanos qué buscas
+      </a>
+    </div>
     </div>
   </div>
 </div>
 
 
-<!-- ═══ CÓMO FUNCIONA ═══ -->
-<div class="como">
-  <p class="section-label" style="color:var(--teal)">El proceso</p>
-  <h2 class="section-title">Así de simple funciona CEL</h2>
-  <div class="steps">
-    <div class="step"><div class="step-num">1</div><h3>Completas el formulario</h3><p>Nos cuentas tus fechas, quiénes viajan y qué quieren vivir. 3 minutos.</p></div>
-    <div class="step"><div class="step-num">2</div><h3>Armamos tu propuesta</h3><p>En menos de 24h te enviamos un itinerario personalizado con precios en CLP.</p></div>
-    <div class="step"><div class="step-num">3</div><h3>Confirmas por WhatsApp</h3><p>Ajustamos lo que necesites y confirmamos todo sin estrés.</p></div>
-    <div class="step"><div class="step-num">4</div><h3>Tú solo disfrutas</h3><p>Llegás a Cartagena y nosotros nos encargamos de que todo fluya perfecto.</p></div>
+<!-- ═══ CÓMO FUNCIONA — REDISEÑO DINÁMICO ═══ -->
+<div class="como-v2">
+  <div class="como-v2-inner">
+    <p class="como-v2-label">El proceso</p>
+    <h2 class="como-v2-title">Así de simple funciona CEL</h2>
+    <p class="como-v2-sub">De tu mensaje a tu experiencia perfecta en Cartagena — 4 pasos.</p>
+
+    <div class="como-v2-steps">
+
+      <!-- PASO 1 -->
+      <div class="como-v2-step fade-in-step" style="transition-delay:0s">
+        <div class="step-icon">
+          <span class="step-num-badge">1</span>
+          <!-- Icono: formulario / clipboard -->
+          <svg viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>
+        </div>
+        <h3>Completa el formulario</h3>
+        <p>Cuéntanos tus fechas, quiénes viajan y qué quieren vivir. 3 minutos.</p>
+      </div>
+
+      <!-- PASO 2 -->
+      <div class="como-v2-step fade-in-step" style="transition-delay:.15s">
+        <div class="step-icon">
+          <span class="step-num-badge">2</span>
+          <!-- Icono: mapa / plan -->
+          <svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+        </div>
+        <h3>Armamos tu propuesta</h3>
+        <p>En menos de 24h te enviamos itinerario personalizado con precios en CLP.</p>
+      </div>
+
+      <!-- PASO 3 -->
+      <div class="como-v2-step fade-in-step" style="transition-delay:.3s">
+        <div class="step-icon">
+          <span class="step-num-badge">3</span>
+          <!-- Icono: WhatsApp / chat -->
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3>Confirma por WhatsApp</h3>
+        <p>Ajustamos lo que necesites y confirmamos todo sin estrés.</p>
+      </div>
+
+      <!-- PASO 4 -->
+      <div class="como-v2-step fade-in-step" style="transition-delay:.45s">
+        <div class="step-icon">
+          <span class="step-num-badge">4</span>
+          <!-- Icono: sol / disfrute -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </div>
+        <h3>Tú solo disfrutas</h3>
+        <p>Llegas a Cartagena y nosotros nos encargamos de que todo fluya perfecto.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ═══ PREGUNTAS FRECUENTES ═══ -->
+<div class="faq-section">
+  <div class="faq-inner">
+    <p class="section-label" style="text-align:center">Preguntas frecuentes</p>
+    <h2 class="section-title" style="text-align:center;margin-bottom:10px;">Lo que nos preguntan<br/>antes de reservar</h2>
+    <p style="text-align:center;font-size:14px;color:var(--gray);margin-bottom:0;">¿Tienes alguna duda? <a href="https://wa.me/+56998435497" style="color:var(--teal);font-weight:600;">Escríbenos por WhatsApp →</a></p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <h3>¿Qué debo llevar a los tours de playa?</h3>
+        <p>Ropa de baño y una muda de ropa seca, protector solar (biodegradable si es posible en las islas), toalla, documento de identidad y algo de efectivo para extras o souvenirs. Nosotros te confirmamos todo en la propuesta.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Con cuánta anticipación debo reservar?</h3>
+        <p>Recomendamos mínimo 48 horas antes, especialmente en temporada alta (diciembre–enero y semana santa). En temporada baja muchas veces podemos organizar algo en el día — consúltanos por WhatsApp.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Los tours incluyen almuerzo y transporte en lancha?</h3>
+        <p>La mayoría sí — cada card de tour especifica exactamente qué incluye. En los beach clubs de isla el transporte en lancha y el almuerzo (a la carta o buffet) siempre están incluidos en el precio.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Puedo ir con niños a los tours de playa?</h3>
+        <p>Sí, varios tours son aptos para familias con niños (Isla del Sol, Palmarito). Los tours marcados +18 son exclusivos para adultos. En el formulario indicás las edades del grupo y te recomendamos la mejor opción.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Qué pasa si alguien del grupo no sabe nadar?</h3>
+        <p>Sin problema. Todos los tours en lancha o isla incluyen chalecos salvavidas. El snorkel es siempre opcional. Y hay varios tours perfectos para no nadadores — el atardecer en catamarán, la Chiva Rumbera y los city tours.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Los chilenos necesitan visa o pasaporte para entrar a Colombia?</h3>
+        <p>No necesitas visa. Con tu cédula de identidad chilena vigente puedes ingresar a Colombia por hasta 90 días. Te recomendamos viajar también con pasaporte por si hay alguna revisión adicional en el aeropuerto.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Hay tours privados disponibles para grupos?</h3>
+        <p>Sí. Podemos organizar experiencias 100% privadas para grupos de cualquier tamaño — lancha privada, guía exclusivo, menú especial. Indicalo en el formulario y te enviamos una propuesta a medida.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Cuál es la mejor época para visitar Cartagena?</h3>
+        <p>Cartagena tiene clima tropical durante todo el año — temperatura promedio de 28°C. La temporada seca (diciembre a abril) tiene las mejores condiciones de mar. Pero incluso en temporada de lluvia (mayo–noviembre) el clima permite disfrutar las islas la mayor parte del tiempo.</p>
+      </div>
+
+    </div>
   </div>
 </div>
 
@@ -715,7 +1038,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="logo">CEL<span style="color:var(--teal)">.</span></div>
+      <img src="logo/logo-cel.png" alt="CEL — Cartagena Experience Lab" class="logo-img-footer">
       <p>Cartagena Experience Lab. Diseñamos experiencias únicas para viajeros chilenos en el Caribe colombiano.</p>
       <div class="footer-socials">
         <a href="https://www.instagram.com/cartagenaexperiencelab" target="_blank" class="social-btn" aria-label="Instagram">
@@ -828,5 +1151,19 @@ function abrirFormDescuento() {
 }
 </script>
 
+
+<script>
+// ── FADE-IN AL SCROLL para pasos de Cómo Funciona ──
+(function(){
+  var steps = document.querySelectorAll('.fade-in-step');
+  if(!steps.length) return;
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); }
+    });
+  }, {threshold: 0.2});
+  steps.forEach(function(s){ observer.observe(s); });
+})();
+</script>
 </body>
 </html>
